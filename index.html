@@ -1,0 +1,183 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Обижалка</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+<link rel="icon" type="image/png" href="favicon-poop.png">
+
+<style>
+  body {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    background-color: #eee;
+  }
+  .btn 
+  {
+   outline:0;
+   border:none;
+   border-top:none;
+   border-bottom:none;
+   border-left:none;
+   border-right:none;
+   box-shadow:inset 2px -3px rgba(0,0,0,0.15);
+  }
+  .btn:focus
+  {
+   outline:0;
+   -webkit-outline:0;
+   -moz-outline:0;
+  }
+  .fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('background-splash.jpg');
+    background-repeat:repeat;
+  }
+  .form-signin {
+    max-width: 630px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top:50px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .form-signin .form-signin-heading, .form-signin {
+    margin-bottom: 10px;
+  }
+  .form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-color: #000;
+    text-align: center;
+  }
+  .form-signin-heading {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  }
+  .my_title {
+    font-size: 45px;
+  }
+  .my_reply {
+    font-size: 30px;
+    border-radius: 25px;
+    background: rgb(149, 7, 7);
+    padding: 30px;
+    width: 600px;
+    }
+</style>
+
+<script>
+  
+const rhymes={ // http://bezbukv.ru/rhyme
+    "гаша":"в жопе деревяша!",
+    "ашка$":"в жопе фисташка!",
+    "аша$": "какаша!",
+    "ля$": ["хреноля", "дудоля", "пердоля"],
+    "ера$": "холера!",
+    "пан$": "дурман!",
+    "юша$": "пердюша!",
+    "test$": "говнотест!",
+    "лег$": "говнег!",
+    "атька$":"какатька!",
+    "[её]па$":"недотёпа!",
+    "уся$": "ой, щас я обосруся!",
+    "анна$": "хренова ты ванна!",
+    "рей$": "тупей",
+    "глеб$": "ты нелеп!",
+    "лиса$": "ты хитрая киса!",
+    "едя$": "опять насрал в медведя!",
+    "оня$": "описалась спросоня!",
+    "иша$": "у тебя едет крыша!",
+    "аня$": "дольчегабаня!",
+    "утка$":"ты воняешь жутко!",
+    "[её]ша$": "сраная галоша",
+    "сей$": "безмозглый сенсей",
+    "ена$": "какашка до колена!",
+    "лина$":"полная дубина",
+    "астя$":"вонючая говнястя!",
+    "сия$":["мозговая конвульси́я!","умственная анорексия!","экзистенциальная перверсия!"],
+    "ина$":"ты стройна как макарони́на!",
+    "адий$":"обьелся оладий!",
+    "авел$":"мозг твой заржа́вел!",
+}
+var prevRhyme = "", prevReply
+
+function rugalka(){
+    
+    var name = document.getElementById('name').value.trim();
+    var reply="ой, я вас не знаю!" 
+    for (var k in rhymes) {
+        //console.log(prevRhyme,k,rhymes[k])
+        var pattern = new RegExp(k,"i")
+        if (pattern.test(name)) {
+            reply=typeof rhymes[k]=="object" ? rhymes[k].slice() : rhymes[k]
+            //console.log("reply="+reply)
+            if (prevRhyme==k && typeof prevReply=="object" && prevReply.length>0) reply=prevReply
+            prevRhyme=k
+            break
+        }
+
+    }   
+    if (typeof reply=="object") {        
+        var randIndex=Math.floor(Math.random() * reply.length)
+        prevReply=reply
+        reply=reply[randIndex]
+        prevReply.splice(randIndex,1)
+        //console.log(randIndex, reply, prevReply,prevReply.length)
+    }
+    document.getElementById('reply').innerHTML = "<h1 class='form-signin-heading text-muted my_reply'><b><font color=white>"+ name + " - " + reply + "</font></b></h1>"
+    document.getElementById('name').select()
+    new Audio('sound-reply.mp3').play();
+}
+</script>
+
+</head>
+<body>
+
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+  <!-- https://bootsnipp.com/tags/forms?page=1 -->
+  <div class="container">
+    <div class="form-signin">
+      <h1 class="form-signin-heading text-muted my_title">Сейчас вас будут обижать!</h1>
+      <input id='name' type="text" class="form-control" placeholder="Как вас зовут?" required="" autofocus="">
+      <button id='ok' onclick='rugalka()' class="btn btn-lg btn-primary btn-block" type="submit">Прошу меня обидеть</button>
+      <div id='reply'></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('name').onkeypress=function(e){
+      //console.log(e.keyCode)
+      if(e.keyCode==13) document.getElementById('ok').click()
+  }
+</script>
+
+</body>
+</html>
