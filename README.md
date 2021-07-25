@@ -1,2 +1,2 @@
 
-# ПАВЕЛ Северов - pavelseverov.github.io
+# ПАВЕЛ Северов -- pavelseverov.github.io
