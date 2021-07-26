@@ -4,7 +4,7 @@
 - <https://instagram.com/pavel.severov>
 - <https://facebook.com/pavel.a.severov>
 - <https://vk.com/pavelseverov>
-- <https://t.me/PavelSeverov>
+- <https://t.me/pavelseverov>
 
 ## Other ::
 - [Справочник по группе "Аквариум"](https://handbook.severov.net/) 
