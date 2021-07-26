@@ -1,6 +1,6 @@
 title: Pavel Severov
-logo: /assets/img/logo.png
-description: Pavel Severov's links.
-show_downloads: true
+logo: logo.png
+description:
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
