@@ -2,9 +2,9 @@
 
 ## Social
 
-- http://instagram.com/pavel.severov
-- http://facebook.com/pavel.a.severov
-- http://vk.com/pavelseverov
+- (http://instagram.com/pavel.severov)
+- [](http://facebook.com/pavel.a.severov)
+- [vk.com/pavelseverov](http://vk.com/pavelseverov)
 - https://t.me/PavelSeverov
 
 ## Other
