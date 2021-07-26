@@ -8,9 +8,9 @@
 
 ## Other ::
 - [Справочник по группе "Аквариум"](https://handbook.severov.net/) 
-- [Песня из коллекции](http://garson.lipetsk.ru/pik/)
 - [Домашний оркестр Музимузи](https://www.youtube.com/playlist?list=PLl6giHblia3N4qqQlOt6r-vFFkGE_Ol1h)
 - [Мой песенник](http://play.severov.net/songbook/)
+- [Песня из коллекции](http://garson.lipetsk.ru/pik/)
 - [Сообщество "Дачная жизнь в Абрамцеве"](https://55km.livejournal.com/)
 
 <!--
