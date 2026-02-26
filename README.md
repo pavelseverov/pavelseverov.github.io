@@ -1,4 +1,4 @@
-# В настоящее время справочник (<b><a target="_blank" href="https://handbook.severov.net/">handbook.severov.net</a></b>) не работает
+# В настоящее время справочник по Аквариуму (<b><a target="_blank" href="https://handbook.severov.net/">handbook.severov.net</a></b>) не работает
 
 <b>Ищется новый хостинг, желательно бесплатный, но другие варианты тоже рассматриваются</b>
 
