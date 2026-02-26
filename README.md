@@ -5,3 +5,5 @@
 
 Когда починим - сообщим в <b><a target="_blank" href="http://subscribe.ru/catalog/culture.music.2128506">нашей рассылке</a></b>.
 Подписывайтесь, чтобы быть в курсе этой и других новостей справочника :-)
+
+![Looking for a new hosting](handbook_new_hosting.png)
